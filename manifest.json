@@ -1,0 +1,23 @@
+{
+  "manifest_version": 2,
+
+  "name": "Chrome Page Inspector",
+  "description": "Chrome plugin to inspect web page",
+  "version": "1.0",
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*"],
+      "js": ["jquery.js", "content.js"]
+    }
+  ],
+  "permissions": [
+    "activeTab",
+    "https://ajax.googleapis.com/",
+    "tabs",
+    "<all_urls>"
+  ]
+}
