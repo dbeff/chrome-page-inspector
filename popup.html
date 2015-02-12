@@ -5,39 +5,34 @@
  value "popup.html".
  -->
 <html>
-  <head>
-    <title>Getting Started Extension's Popup</title>
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,400,600,700' rel='stylesheet' type='text/css'>
-    <style>
-      body {
-        font-family: "Open Sans", "Lucida Grande", Tahoma, sans-serif;
-        font-size: 100%;
-        -webkit-font-smoothing: antialiased;
-        color: #1c2731;
-        width:400px;
-        height:500px;
-      }
-      #status {
-        /* avoid an excessively wide status text */
-        white-space: pre;
-        text-overflow: ellipsis;
-        overflow: hidden;
-        max-width: 400px;
-      }
-    </style>
+    <head>
+        <title>Getting Started Extension's Popup</title>
+        <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro|Grand+Hotel|Open+Sans:400italic,400,600,700,300' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="css/main.css">
+        <!--
+          - JavaScript and HTML must be in separate files: see our Content Security
+          - Policy documentation[1] for details and explanation.
+          -
+          - [1]: https://developer.chrome.com/extensions/contentSecurityPolicy
+         -->
+        <script src="js/angular.js"></script>
+        <script src="js/jquery.js"></script>
+        <script src="js/popup.js"></script>
+    </head>
+    <body>
+        <h1>Frontendler <small>Inspector</small></h1>
+        <div class="conteudo">
+            <h2>HTML</h2>
+            <div class="regra"><span class="nome">Title: </span><span class="valor title"></span></div>
+            <div class="regra"><span class="nome">Description: </span><span class="valor description"></span></div>
+            <div class="regra"><span class="nome">Viewport: </span><span class="valor viewport"></span></div>
+        </div>
+        <div class="conteudo">
+            <h2>META</h2>
+            <div class="regra"><span class="nome">OG:Title: </span><span class="valor og-title"></span></div>
+            <div class="regra"><span class="nome">OG:Image: </span><span class="valor og-image"></span></div>
+        </div>
 
-    <!--
-      - JavaScript and HTML must be in separate files: see our Content Security
-      - Policy documentation[1] for details and explanation.
-      -
-      - [1]: https://developer.chrome.com/extensions/contentSecurityPolicy
-     -->
-    <script src="jquery.js"></script>
-    <script src="popup.js"></script>
-  </head>
-  <body>
-      Tem body?
-      <div class="body"></div>
 
-  </body>
+    </body>
 </html>

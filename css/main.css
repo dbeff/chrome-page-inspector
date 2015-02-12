@@ -1,0 +1,53 @@
+body {
+  font-family: "Open Sans", "Lucida Grande", Tahoma, sans-serif;
+  font-size: 100%;
+  -webkit-font-smoothing: antialiased;
+  color: #1c2731;
+  width:500px;
+  height:550px;
+  font-size:11px;
+}
+#status {
+  /* avoid an excessively wide status text */
+  white-space: pre;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-width: 400px;
+}
+
+h1{
+    font-family:"Grand Hotel";
+    background-color: #1c2731;
+    padding: 10px;
+    margin:0;
+    color: #fff;
+    font-size: 30px;
+    font-weight: 300;
+
+}
+h1 > small{
+    font-family: "Open Sans", "Lucida Grande", Tahoma, sans-serif;
+    color:#a4d6e5;
+    font-size:0.5em;
+    font-weight:600;
+
+}
+
+h2{
+    color:#1c2731;
+    font-weight: 600;
+    font-size: 14px;
+    margin: 0;
+}
+body{
+    margin:0;
+    padding:0;
+}
+
+.conteudo{
+    padding: 10px;
+    border-bottom:1px solid #f1f1f1
+}
+.conteudo .regra{margin: 5px 0}
+.conteudo .regra .nome{font-weight:600;color:#00a7ca;}
+.conteudo .regra .valor{font-weight:600;color:#939fac}
