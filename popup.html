@@ -4,12 +4,13 @@
  "browser_action" field in manifest.json contains the "default_popup" key with
  value "popup.html".
  -->
-<html>
+<html ng-app="inspector">
     <head>
         <title>Getting Started Extension's Popup</title>
         <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro|Grand+Hotel|Open+Sans:400italic,400,600,700,300' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="css/main.css">
         <!--
+          - Chrome plugin:
           - JavaScript and HTML must be in separate files: see our Content Security
           - Policy documentation[1] for details and explanation.
           -
@@ -20,19 +21,43 @@
         <script src="js/popup.js"></script>
     </head>
     <body>
-        <h1>Frontendler <small>Inspector</small></h1>
-        <div class="conteudo">
-            <h2>HTML</h2>
-            <div class="regra"><span class="nome">Title: </span><span class="valor title"></span></div>
-            <div class="regra"><span class="nome">Description: </span><span class="valor description"></span></div>
-            <div class="regra"><span class="nome">Viewport: </span><span class="valor viewport"></span></div>
-        </div>
-        <div class="conteudo">
-            <h2>META</h2>
-            <div class="regra"><span class="nome">OG:Title: </span><span class="valor og-title"></span></div>
-            <div class="regra"><span class="nome">OG:Image: </span><span class="valor og-image"></span></div>
-        </div>
+		<header>
+			<h1>Frontendler <small>Inspector</small></h1>
+			<nav>
+				<ul>
+					<li ng-click="page.goTo('seo')" >SEO</li>
+					<li ng-click="page.goTo('social')" >SOCIAL</li>
+				</ul>
+			</nav>
+		</header>
 
-
+		<main ng-controller="PageController as page">
+			<section class="seo" ng-show="page.current == 'seo'">
+				<div class="conteudo">
+					<h2>HTML</h2>
+					<div class="regra"><span class="nome">Title: </span><span class="valor title"></span></div>
+					<div class="regra"><span class="nome">Description: </span><span class="valor description"></span></div>
+					<div class="regra"><span class="nome">Viewport: </span><span class="valor viewport"></span></div>
+				</div>
+				<div class="conteudo">
+					<h2>META</h2>
+					<div class="regra"><span class="nome">OG:Title: </span><span class="valor og-title"></span></div>
+					<div class="regra"><span class="nome">OG:Image: </span><span class="valor og-image"></span></div>
+				</div>
+			</section>
+			<section class="social" ng-show="page.current == 'social'">
+				<div class="conteudo">
+					<h2>FACEBOOK</h2>
+					<div class="regra"><span class="nome">Title: </span><span class="valor title"></span></div>
+					<div class="regra"><span class="nome">Description: </span><span class="valor description"></span></div>
+					<div class="regra"><span class="nome">Viewport: </span><span class="valor viewport"></span></div>
+				</div>
+				<div class="conteudo">
+					<h2>TWITTER</h2>
+					<div class="regra"><span class="nome">OG:Title: </span><span class="valor og-title"></span></div>
+					<div class="regra"><span class="nome">OG:Image: </span><span class="valor og-image"></span></div>
+				</div>
+			</section>
+		</main>
     </body>
 </html>

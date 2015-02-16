@@ -15,17 +15,23 @@ body {
   max-width: 400px;
 }
 
-h1{
+header{
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+}
+
+header h1{
+	background-color: #1c2731;
+	padding: 10px;
     font-family:"Grand Hotel";
-    background-color: #1c2731;
-    padding: 10px;
     margin:0;
     color: #fff;
     font-size: 30px;
     font-weight: 300;
-
 }
-h1 > small{
+header h1 > small{
     font-family: "Open Sans", "Lucida Grande", Tahoma, sans-serif;
     color:#a4d6e5;
     font-size:0.5em;
@@ -33,12 +39,37 @@ h1 > small{
 
 }
 
-h2{
-    color:#1c2731;
-    font-weight: 600;
-    font-size: 14px;
-    margin: 0;
+header nav{
+	background:#00a7ca;
+	color: #d5f0fb;
+	overflow: auto;
 }
+
+header ul {
+	list-style: none;
+	padding:0;
+	margin:0;
+}
+
+header ul li {
+	float:left;
+	padding:10px;
+	font-size:13px;
+	font-weight: bold;
+	cursor:pointer;
+}
+
+main{
+	padding-top:100px;
+}
+
+main h2{
+	color:#1c2731;
+	font-weight: 600;
+	font-size: 14px;
+	margin: 0;
+}
+
 body{
     margin:0;
     padding:0;
