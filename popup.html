@@ -36,31 +36,82 @@
 			<section class="seo" ng-show="page.current == 'seo'">
 				<div class="conteudo">
 					<h2>META</h2>
-					<div class="regra"><span class="nome">Title: </span><span class="valor">{{data.meta.title}}</span></div>
-					<div class="regra"><span class="nome">Description: </span><span class="valor">{{data.meta.description}}</span></div>
-					<div class="regra"><span class="nome">Viewport: </span><span class="valor">{{data.meta.viewport}}</span></div>
-					<div class="regra"><span class="nome">Keywords: </span><span class="valor">{{data.meta.keywords}}</span></div>
+					<div class="regra">
+						<span class="nome">Title: </span>
+						<span class="valor" ng-class="{warning : !data.meta.title}">{{data.meta.title || 'undefined'}}</span>
+					</div>
+					<div class="regra">
+						<span class="nome">Description: </span>
+						<span class="valor" ng-class="{warning : !data.meta.description}">{{data.meta.description || 'undefined'}}</span>
+					</div>
+					<div class="regra">
+						<span class="nome">Viewport: </span>
+						<span class="valor" ng-class="{warning : !data.meta.viewport}">{{data.meta.viewport || 'undefined'}}</span>
+					</div>
+					<div class="regra">
+						<span class="nome">Keywords: </span>
+						<span class="valor" ng-class="{warning : !data.meta.keywords}">{{data.meta.keywords || 'undefined'}}</span>
+					</div>
 				</div>
 			</section>
 			<section class="social" ng-show="page.current == 'social'">
 				<div class="conteudo">
 					<h2>FACEBOOK</h2>
-					<div class="regra"><span class="nome">og:title: </span><span class="valor">{{data.social.ogTitle}}</span></div>
-					<div class="regra"><span class="nome">og:description: </span><span class="valor">{{data.social.ogDescription}}</span></div>
-					<div class="regra"><span class="nome">og:site_name: </span><span class="valor">{{data.social.ogSiteName}}</span></div>
-					<div class="regra"><span class="nome">og:url: </span><span class="valor">{{data.social.ogUrl}}</span></div>
-					<div class="regra"><span class="nome">og:image: </span><span class="valor">{{data.social.ogImage}}</span></div>
-					<div class="regra"><span class="nome">og:type: </span><span class="valor">{{data.social.ogType}}</span></div>
-					<div class="regra"><span class="nome">og:locale: </span><span class="valor">{{data.social.ogLocale}}</span></div>
+					<div class="regra">
+						<span class="nome">og:title: </span>
+						<span class="valor" ng-class="{warning : !data.social.ogTitle}">{{data.social.ogTitle}}</span>
+					</div>
+					<div class="regra">
+						<span class="nome">og:description: </span>
+						<span class="valor" ng-class="{warning : !data.social.ogDescription}">{{data.social.ogDescription || 'undefined'}}</span>
+					</div>
+					<div class="regra">
+						<span class="nome">og:site_name: </span>
+						<span class="valor" ng-class="{warning : !data.social.ogSiteName}">{{data.social.ogSiteName || 'undefined'}}</span>
+					</div>
+					<div class="regra">
+						<span class="nome">og:url: </span>
+						<span class="valor" ng-class="{warning : !data.social.ogUrl}">{{data.social.ogUrl || 'undefined'}}</span>
+					</div>
+					<div class="regra">
+						<span class="nome">og:image: </span>
+						<span class="valor" ng-class="{warning : !data.social.ogImage}">{{data.social.ogImage || 'undefined'}}</span>
+					</div>
+					<div class="regra">
+						<span class="nome">og:type: </span>
+						<span class="valor" ng-class="{warning : !data.social.ogType}">{{data.social.ogType || 'undefined'}}</span>
+					</div>
+					<div class="regra">
+						<span class="nome">og:locale: </span>
+						<span class="valor" ng-class="{warning : !data.social.ogLocale}">{{data.social.ogLocale || 'undefined'}}</span>
+					</div>
 				</div>
 				<div class="conteudo">
 					<h2>TWITTER</h2>
-					<div class="regra"><span class="nome">twitter:title: </span><span class="valor">{{data.social.twitterTitle}}</span></div>
-					<div class="regra"><span class="nome">twitter:description: </span><span class="valor">{{data.social.twitterDescription}}</span></div>
-					<div class="regra"><span class="nome">twitter:site: </span><span class="valor">{{data.social.twitterSite}}</span></div>
-					<div class="regra"><span class="nome">twitter:card: </span><span class="valor">{{data.social.twitterCard}}</span></div>
-					<div class="regra"><span class="nome">twitter:image: </span><span class="valor">{{data.social.twitterImage}}</span></div>
-					<div class="regra"><span class="nome">twitter:url: </span><span class="valor">{{data.social.twitterUrl}}</span></div>
+					<div class="regra">
+						<span class="nome">twitter:title: </span>
+						<span class="valor" ng-class="{warning : !data.social.twitterTitle}">{{data.social.twitterTitle || 'undefined'}}</span>
+					</div>
+					<div class="regra">
+						<span class="nome">twitter:description: </span>
+						<span class="valor" ng-class="{warning : !data.social.twitterDescription}">{{data.social.twitterDescription || 'undefined'}}</span>
+					</div>
+					<div class="regra">
+						<span class="nome">twitter:site: </span>
+						<span class="valor" ng-class="{warning : !data.social.twitterSite}">{{data.social.twitterSite || 'undefined'}}</span>
+					</div>
+					<div class="regra">
+						<span class="nome">twitter:card: </span>
+						<span class="valor" ng-class="{warning : !data.social.twitterCard}">{{data.social.twitterCard || 'undefined'}}</span>
+					</div>
+					<div class="regra">
+						<span class="nome">twitter:image: </span>
+						<span class="valor" ng-class="{warning : !data.social.twitterImage}">{{data.social.twitterImage || 'undefined'}}</span>
+					</div>
+					<div class="regra">
+						<span class="nome">twitter:url: </span>
+						<span class="valor" ng-class="{warning : !data.social.twitterUrl}">{{data.social.twitterUrl || 'undefined'}}</span>
+					</div>
 				</div>
 			</section>
 			<section class="headers" ng-show="page.current == 'headers'">

@@ -90,3 +90,6 @@ body{
 	white-space: pre-line;
 	display: block;
 }
+.conteudo .regra .valor.warning{
+	color:darkred;
+}
