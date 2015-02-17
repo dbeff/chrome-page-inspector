@@ -1,18 +1,18 @@
 {
-  "manifest_version": 2,
-
-  "name": "Frontendler inspector",
-  "description": "Chrome plugin to inspect web page",
-  "version": "1.0",
-  "browser_action": {
-    "default_icon": "img/icon.png",
-    "default_popup": "popup.html"
-  },
-  "content_scripts": [
-    {
-      "matches": ["http://*/*"],
-      "js": ["js/jquery.js", "js/content.js"]
-    }
+	"manifest_version": 2,
+	"name": "Frontendler inspector",
+	"description": "Chrome plugin to inspect web page",
+	"version": "1.0",
+	"browser_action": {
+		"default_icon": "img/icon.png",
+		"default_popup": "popup.html"
+	},
+	"content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+	"content_scripts": [
+	{
+		"matches": ["http://*/*"],
+		"js": ["js/jquery.js", "js/content.js"]
+	}
   ],
   "permissions": [
     "<all_urls>"

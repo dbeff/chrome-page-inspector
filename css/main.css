@@ -3,7 +3,7 @@ body {
   font-size: 100%;
   -webkit-font-smoothing: antialiased;
   color: #1c2731;
-  width:500px;
+  width:600px;
   height:550px;
   font-size:11px;
 }
@@ -59,6 +59,10 @@ header ul li {
 	cursor:pointer;
 }
 
+header ul li.active{
+	background-color:#0395b3;
+}
+
 main{
 	padding-top:100px;
 }
@@ -82,3 +86,7 @@ body{
 .conteudo .regra{margin: 5px 0}
 .conteudo .regra .nome{font-weight:600;color:#00a7ca;}
 .conteudo .regra .valor{font-weight:600;color:#939fac}
+.conteudo .regra .valor.http-headers{
+	white-space: pre-line;
+	display: block;
+}
