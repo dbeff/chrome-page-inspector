@@ -1,18 +1,17 @@
 body {
-  font-family: "Open Sans", "Lucida Grande", Tahoma, sans-serif;
-  font-size: 100%;
-  -webkit-font-smoothing: antialiased;
-  color: #1c2731;
-  width:600px;
-  height:550px;
-  font-size:11px;
+	font-family: "Open Sans", "Lucida Grande", Tahoma, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	color: #1c2731;
+	width:600px;
+	height:550px;
+	font-size:11px;
 }
 #status {
-  /* avoid an excessively wide status text */
-  white-space: pre;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  max-width: 400px;
+	/* avoid an excessively wide status text */
+	white-space: pre;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	max-width: 400px;
 }
 
 header{
@@ -20,12 +19,16 @@ header{
 	top:0;
 	left:0;
 	width:100%;
+	-webkit-user-select: none;
+	user-select: none;
+	cursor: default;
+	z-index:99999;
 }
 
 header h1{
 	background-color: #1c2731;
 	padding: 10px;
-    font-family:"Grand Hotel";
+	font-family: "Grand Hotel", Arial, serif;
     margin:0;
     color: #fff;
     font-size: 30px;
@@ -72,6 +75,18 @@ main h2{
 	font-weight: 600;
 	font-size: 14px;
 	margin: 0;
+	position:relative;
+}
+
+main h2 span{
+	/*background:#0395b3;*/
+	/*color: #fff;*/
+	/*border-radius:3px;*/
+	/*padding:0px 5px;*/
+	/*font-size:0.9em;*/
+
+	color: #0395b3;
+	font-size:0.9em;
 }
 
 body{
@@ -86,10 +101,10 @@ body{
 .conteudo .regra{margin: 5px 0}
 .conteudo .regra .nome{font-weight:600;color:#00a7ca;}
 .conteudo .regra .valor{font-weight:600;color:#939fac}
-.conteudo .regra .valor.http-headers{
+.conteudo .regra .valor.warning{color:darkred;}
+
+.httpheader .conteudo .regra .valor{
 	white-space: pre-line;
 	display: block;
 }
-.conteudo .regra .valor.warning{
-	color:darkred;
-}
+

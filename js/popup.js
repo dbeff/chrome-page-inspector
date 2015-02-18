@@ -18,8 +18,6 @@
 
 })();
 
-
-
 chrome.tabs.getSelected(null,function(tab) {
 	chrome.tabs.sendRequest(tab.id, 'mensagem', function(response) {
 		data = JSON.parse(response);

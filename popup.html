@@ -27,7 +27,8 @@
 				<ul>
 					<li ng-click="page.goTo('seo')" ng-class="{active : page.current== 'seo'}">SEO</li>
 					<li ng-click="page.goTo('social')" ng-class="{active : page.current== 'social'}">SOCIAL</li>
-					<li ng-click="page.goTo('headers')" ng-class="{active : page.current== 'headers'}">HEADERS</li>
+					<li ng-click="page.goTo('performance')" ng-class="{active : page.current== 'performance'}">PERFORMANCE</li>
+					<li ng-click="page.goTo('httpheader')" ng-class="{active : page.current== 'httpheader'}">HEADERS</li>
 				</ul>
 			</nav>
 		</header>
@@ -114,10 +115,27 @@
 					</div>
 				</div>
 			</section>
-			<section class="headers" ng-show="page.current == 'headers'">
+			<section class="performance" ng-show="page.current == 'performance'">
 				<div class="conteudo">
-					<h2>HTTP HEADERS</h2>
-					<div class="regra"><span class="nome">http headers: </span><span class="valor http-headers">{{data.headers}}</span></div>
+					<h2>STYLES <span>({{data.style.link.length}})</span></h2>
+					<div class="regra" ng-repeat="link in data.style.link | orderBy ">
+						<a href="{{link}}" class="valor" target="_blank">{{link}}</a>
+					</div>
+				</div>
+				<div class="conteudo">
+					<h2>SCRIPTS <span>({{data.script.source.length}})</span></h2>
+					<div class="regra" ng-repeat="source in data.script.source | orderBy">
+						<a href="{{source}}" class="valor" target="_blank">{{source}}</a>
+					</div>
+				</div>
+			</section>
+			<section class="httpheader" ng-show="page.current == 'httpheader'">
+				<div class="conteudo">
+					<h2>HTTP HEADER</h2>
+					<div class="regra">
+						<span class="nome">http header: </span>
+						<span class="valor">{{data.httpheader}}</span>
+					</div>
 				</div>
 			</section>
 		</main>

@@ -30,16 +30,27 @@ function Content (){
 	this.data.favicon.msTileColor = '';
 
 	this.data.style = {};
-	this.data.script = '';
-	this.data.style.links = [];
+	this.data.style.link = [];
 
-	this.data.headers = '';
+	this.data.script = {};
+	this.data.script.source = [];
+
+
+	this.data.httpheader = '';
 
 
 	this.getStyles = function (){
-		var elements = document.querySelectorAll("link[rel='stylesheet']");
+		var elements = document.querySelectorAll("link[rel='stylesheet']") || [];
 		for (var i = 0; i < elements.length; i++){
-			this.data.style.links.push(elements[i].getAttribute('href'));
+			this.data.style.link.push(elements[i].href);
+		}
+	};
+
+	this.getScripts = function (){
+		var elements = document.querySelectorAll("script[src]") || [];
+		console.log(elements);
+		for (var i = 0; i < elements.length; i++){
+			this.data.script.source.push(elements[i].src);
 		}
 	};
 
@@ -47,34 +58,33 @@ function Content (){
 		var req = new XMLHttpRequest();
 		req.open('GET', document.location, false);
 		req.send(null);
-		this.data.headers = req.getAllResponseHeaders().toLowerCase();
+		this.data.httpheader = req.getAllResponseHeaders().toLowerCase();
 	};
 
 	this.getHeader = function (name){
 		var req = new XMLHttpRequest();
 		req.open('GET', document.location, false);
 		req.send(null);
-		var header = req.getResponseHeader(name).toLowerCase();
-		return header;
-	};
-
-
-	this.chromeOnRquest = function (){
-		var dataJson = JSON.stringify(this.data);
-		chrome.extension.onRequest.addListener(
-			function(request, sender, sendResponse) {
-				sendResponse (dataJson);
-			}
-		);
+		return req.getResponseHeader(name).toLowerCase();
 	};
 
 	this.getStyles();
+	this.getScripts();
 	this.getHeaders();
-	this.chromeOnRquest();
 }
 
 
-new Content();
+chrome.extension.onRequest.addListener(
+	function(request, sender, sendResponse) {
+
+		var content = new Content();
+		console.log(content.data);
+		var dataJson = JSON.stringify(content.data);
+		sendResponse (dataJson);
+	}
+);
+
+
 
 
 
