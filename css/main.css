@@ -23,6 +23,7 @@ header{
 	user-select: none;
 	cursor: default;
 	z-index:99999;
+	box-shadow: 0px 1px 7px rgba(0,0,0,0.3);
 }
 
 header h1{
@@ -106,5 +107,8 @@ body{
 .httpheader .conteudo .regra .valor{
 	white-space: pre-line;
 	display: block;
+}
+.performance .conteudo .regra .valor{
+	word-break: break-all;
 }
 
