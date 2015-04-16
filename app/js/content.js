@@ -1,12 +1,21 @@
-console.log ('frontendler inspector | content.js');
+console.log ('frontendler inspector | content');
 
 function Content (){
 	this.data = {};
+	this.data.version = "";
 	this.data.meta = {};
 	this.data.meta.title = $('title').html();
 	this.data.meta.description = $("meta[name='description']").attr('content');
 	this.data.meta.keywords = $("meta[name='keywords']").attr('content');
 	this.data.meta.viewport = $("meta[name='viewport']").attr('content');
+
+	this.data.headers = {};
+	this.data.headers.h1 = [];
+	this.data.headers.h2 = [];
+	this.data.headers.h3 = [];
+	this.data.headers.h4 = [];
+	this.data.headers.h5 = [];
+	this.data.headers.h6 = [];
 
 	this.data.social = {};
 	this.data.social.ogTitle = $("meta[property='og:title']").attr('content');
@@ -36,7 +45,7 @@ function Content (){
 	this.data.script.source = [];
 
 
-	this.data.httpheader = '';
+	this.data.httpHeaders = '';
 
 
 	this.getStyles = function (){
@@ -48,20 +57,29 @@ function Content (){
 
 	this.getScripts = function (){
 		var elements = document.querySelectorAll("script[src]") || [];
-		console.log(elements);
 		for (var i = 0; i < elements.length; i++){
 			this.data.script.source.push(elements[i].src);
 		}
 	};
 
 	this.getHeaders = function (){
+		var headers = this.data.headers;
+		$("h1,h2,h3,h4,h5,h6").each (function(){
+			var element = $(this).prop("tagName");
+			var text = $(this).text();
+			 headers[element.toLowerCase()].push(text);
+		});
+
+	};
+
+	this.getHttpHeaders = function (){
 		var req = new XMLHttpRequest();
 		req.open('GET', document.location, false);
 		req.send(null);
-		this.data.httpheader = req.getAllResponseHeaders().toLowerCase();
+		this.data.httpHeaders = req.getAllResponseHeaders().toLowerCase();
 	};
 
-	this.getHeader = function (name){
+	this.getHttpHeader = function (name){
 		var req = new XMLHttpRequest();
 		req.open('GET', document.location, false);
 		req.send(null);
@@ -70,6 +88,7 @@ function Content (){
 
 	this.getStyles();
 	this.getScripts();
+	this.getHttpHeaders();
 	this.getHeaders();
 }
 
@@ -78,14 +97,8 @@ chrome.extension.onRequest.addListener(
 	function(request, sender, sendResponse) {
 
 		var content = new Content();
-		console.log(content.data);
+		// console.log(content.data);
 		var dataJson = JSON.stringify(content.data);
 		sendResponse (dataJson);
 	}
 );
-
-
-
-
-
-

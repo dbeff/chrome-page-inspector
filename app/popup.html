@@ -22,7 +22,11 @@
     </head>
     <body ng-controller="PageController as page">
 		<header>
-			<h1>Frontendler <small>Inspector</small></h1>
+			<h1>
+                <span class="name">Frontendler</span>
+                <small class="subname">Inspector</small>
+                <span class="version">v{{page.manifest.version}}</span>
+            </h1>
 			<nav>
 				<ul>
 					<li ng-click="page.goTo('seo')" ng-class="{active : page.current== 'seo'}">SEO</li>
@@ -54,6 +58,25 @@
 						<span class="valor" ng-class="{warning : !data.meta.keywords}">{{data.meta.keywords || 'undefined'}}</span>
 					</div>
 				</div>
+                <div class="conteudo">
+                    <h2>HEADERS</h2>
+                    <div class="regra">
+						<span class="nome">H1</span><span> ({{data.headers.h1.length}})</span>
+						<span class="valor" ng-class="{warning : !data.meta.keywords}">{{data.headers.h1 || 'undefined'}}</span>
+					</div>
+                    <div class="regra">
+						<span class="nome">H2</span><span> ({{data.headers.h2.length}})</span>
+						<span class="valor" ng-class="{warning : !data.meta.keywords}">{{data.headers.h2 || 'undefined'}}</span>
+					</div>
+                    <div class="regra">
+						<span class="nome">H3: </span><span> ({{data.headers.h3.length}})</span>
+						<span class="valor" ng-class="{warning : !data.meta.keywords}">{{data.headers.h3 || 'undefined'}}</span>
+					</div>
+                    <div class="regra">
+						<span class="nome">H4: </span><span> ({{data.headers.h4.length}})</span>
+						<span class="valor" ng-class="{warning : !data.meta.keywords}">{{data.headers.h4 || 'undefined'}}</span>
+					</div>
+                </div>
 			</section>
 			<section class="social" ng-show="page.current == 'social'">
 				<div class="conteudo">
@@ -134,7 +157,7 @@
 					<h2>HTTP HEADER</h2>
 					<div class="regra">
 						<!--<span class="nome">http header: </span>-->
-						<span class="valor">{{data.httpheader}}</span>
+						<span class="valor">{{data.httpHeaders}}</span>
 					</div>
 				</div>
 			</section>

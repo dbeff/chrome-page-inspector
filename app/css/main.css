@@ -42,6 +42,15 @@ header h1 > small{
     font-weight:600;
 
 }
+header h1 .version{
+	font-family: "Open Sans", "Lucida Grande", Tahoma, sans-serif;
+	float: right;
+	font-size: 11px;
+	font-weight: bold;
+	color: rgba(255,255,255,0.4);
+	text-transform: uppercase;
+	line-height: 40px;
+}
 
 header nav{
 	background:#00a7ca;
@@ -111,4 +120,3 @@ body{
 .performance .conteudo .regra .valor{
 	word-break: break-all;
 }
-
