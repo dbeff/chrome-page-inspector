@@ -47,5 +47,9 @@ chrome.tabs.getSelected(null,function(tab) {
 			mainScope.data = data;
 		});
 
+		chrome.browserAction.setIcon({
+            path: "img/icon-ok.png",
+        });
+
 	});
 });

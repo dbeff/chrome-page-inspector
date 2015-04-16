@@ -92,13 +92,14 @@ function Content (){
 	this.getHeaders();
 }
 
-
-chrome.extension.onRequest.addListener(
-	function(request, sender, sendResponse) {
-
-		var content = new Content();
-		// console.log(content.data);
-		var dataJson = JSON.stringify(content.data);
-		sendResponse (dataJson);
-	}
-);
+$(document).ready(function (){
+	console.log ('site carregado');
+	chrome.extension.onRequest.addListener(
+		function(request, sender, sendResponse) {
+			var content = new Content();
+			// console.log(content.data);
+			var dataJson = JSON.stringify(content.data);
+			sendResponse (dataJson);
+		}
+	);
+});

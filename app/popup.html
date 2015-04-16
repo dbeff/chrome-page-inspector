@@ -58,24 +58,13 @@
 						<span class="valor" ng-class="{warning : !data.meta.keywords}">{{data.meta.keywords || 'undefined'}}</span>
 					</div>
 				</div>
-                <div class="conteudo">
+                <div class="conteudo headers">
                     <h2>HEADERS</h2>
-                    <div class="regra">
-						<span class="nome">H1</span><span> ({{data.headers.h1.length}})</span>
-						<span class="valor" ng-class="{warning : !data.meta.keywords}">{{data.headers.h1 || 'undefined'}}</span>
+                    <div class="regra" data-ng-repeat="i in [1,2,3,4,5,6]">
+						<span class="nome">H{{i}}</span><span class="tag"> ({{data.headers["h"+i].length}}) </span>
+						<span class="valor">{{data.headers["h"+i].toString()}}</span>
 					</div>
-                    <div class="regra">
-						<span class="nome">H2</span><span> ({{data.headers.h2.length}})</span>
-						<span class="valor" ng-class="{warning : !data.meta.keywords}">{{data.headers.h2 || 'undefined'}}</span>
-					</div>
-                    <div class="regra">
-						<span class="nome">H3: </span><span> ({{data.headers.h3.length}})</span>
-						<span class="valor" ng-class="{warning : !data.meta.keywords}">{{data.headers.h3 || 'undefined'}}</span>
-					</div>
-                    <div class="regra">
-						<span class="nome">H4: </span><span> ({{data.headers.h4.length}})</span>
-						<span class="valor" ng-class="{warning : !data.meta.keywords}">{{data.headers.h4 || 'undefined'}}</span>
-					</div>
+
                 </div>
 			</section>
 			<section class="social" ng-show="page.current == 'social'">

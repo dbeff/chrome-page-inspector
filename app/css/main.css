@@ -1,3 +1,26 @@
+@-webkit-keyframes header {
+    from {
+		transform:translateY(-10px);
+		opacity:0;
+	}
+    to {
+		transform:translateY(0);
+		opacity:1;
+	}
+}
+
+@-webkit-keyframes main {
+    from {
+		transform:translateX(-10px);
+		opacity:0;
+	}
+    to {
+		transform:translateX(0);
+		opacity:1;
+	}
+}
+
+
 body {
 	font-family: "Open Sans", "Lucida Grande", Tahoma, sans-serif;
 	-webkit-font-smoothing: antialiased;
@@ -24,6 +47,10 @@ header{
 	cursor: default;
 	z-index:99999;
 	box-shadow: 0px 1px 7px rgba(0,0,0,0.3);
+	-webkit-animation-name: header;
+    -webkit-animation-duration: 0.5s;
+	-webkit-animation-timing-function: ease-in-out;
+	-webkit-animation-fill-mode: backwards;
 }
 
 header h1{
@@ -47,7 +74,7 @@ header h1 .version{
 	float: right;
 	font-size: 11px;
 	font-weight: bold;
-	color: rgba(255,255,255,0.4);
+	color: #afc2d3;
 	text-transform: uppercase;
 	line-height: 40px;
 }
@@ -78,6 +105,11 @@ header ul li.active{
 
 main{
 	padding-top:100px;
+	-webkit-animation-name: main;
+    -webkit-animation-duration: 0.5s;
+	-webkit-animation-delay: 0.7s;
+	-webkit-animation-timing-function: ease-in-out;
+	-webkit-animation-fill-mode: backwards;
 }
 
 main h2{
